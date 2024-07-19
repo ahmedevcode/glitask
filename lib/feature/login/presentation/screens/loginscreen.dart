@@ -81,8 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  inputdecorationemail() {
-    TextField(
+  dynamic inputdecorationemail() {
+    return TextField(
       controller: _emailController,
       decoration: const InputDecoration(
         labelText: 'Email',
@@ -92,8 +92,8 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  inputdecorationpassword() {
-    TextField(
+  dynamic inputdecorationpassword() {
+    return TextField(
       controller: _passwordController,
       decoration: const InputDecoration(
         labelText: 'Password',

@@ -53,28 +53,9 @@ class _RegisterFormState extends State<RegisterScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextField(
-                    controller: _emailController,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      prefixIcon: const Icon(Icons.email),
-                      border: const OutlineInputBorder(),
-                      errorText:
-                          _errorMessage.isNotEmpty ? _errorMessage : null,
-                    ),
-                  ),
+                  _inputdecorationemail(),
                   const SizedBox(height: 10),
-                  TextField(
-                    controller: _passwordController,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      prefixIcon: const Icon(Icons.lock),
-                      border: const OutlineInputBorder(),
-                      errorText:
-                          _errorMessage.isNotEmpty ? _errorMessage : null,
-                    ),
-                    obscureText: true,
-                  ),
+                  _inputdecorationpassword(),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
@@ -97,6 +78,31 @@ class _RegisterFormState extends State<RegisterScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  _inputdecorationemail() {
+    return TextField(
+      controller: _emailController,
+      decoration: InputDecoration(
+        labelText: 'Email',
+        prefixIcon: const Icon(Icons.email),
+        border: const OutlineInputBorder(),
+        errorText: _errorMessage.isNotEmpty ? _errorMessage : null,
+      ),
+    );
+  }
+
+  _inputdecorationpassword() {
+    return TextField(
+      controller: _passwordController,
+      decoration: InputDecoration(
+        labelText: 'Password',
+        prefixIcon: const Icon(Icons.lock),
+        border: const OutlineInputBorder(),
+        errorText: _errorMessage.isNotEmpty ? _errorMessage : null,
+      ),
+      obscureText: true,
     );
   }
 }
