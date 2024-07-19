@@ -18,7 +18,7 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
-      case Routes.rigesterscreen:
+      case Routes.registerScreen:
         return MaterialPageRoute(
             builder: (_) => BlocProvider<RegisterCubit>(
                 create: (_) => RegisterCubit(AuthService()),

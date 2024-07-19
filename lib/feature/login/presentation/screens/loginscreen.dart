@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:glitask/core/routes/routes.dart';
 import 'package:glitask/feature/login/controller/login_cubit.dart';
 import 'package:glitask/feature/login/presentation/screens/widgets/custompaint_login.dart';
-import '../../../../core/helper/auth_service.dart';
-import '../../../register/presentation/screens/registerscreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginScreenState createState() => _LoginScreenState();
 }
 
@@ -30,24 +28,9 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    prefixIcon: const Icon(Icons.email),
-                    border: const OutlineInputBorder(),
-                  ),
-                ),
+                inputdecorationemail(),
                 const SizedBox(height: 10),
-                TextField(
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    prefixIcon: const Icon(Icons.lock),
-                    border: const OutlineInputBorder(),
-                  ),
-                  obscureText: true,
-                ),
+                inputdecorationpassword(),
                 const SizedBox(height: 20),
                 BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) {
@@ -57,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                     } else if (state is LoginSuccess) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Login successful!')),
+                        const SnackBar(content: Text('Login successful!')),
                       );
                       // Navigate to the TaskManagementScreen here
                     }
@@ -73,7 +56,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         final password = _passwordController.text.trim();
                         context.read<LoginCubit>().login(email, password);
                       },
-                      child: const Text('Login'),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 50, vertical: 15),
@@ -81,12 +63,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
+                      child: const Text('Login'),
                     );
                   },
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, Routes.rigesterscreen);
+                    Navigator.pushNamed(context, Routes.registerScreen);
                   },
                   child: const Text('Don\'t have an account? Register'),
                 ),
@@ -95,6 +78,29 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  inputdecorationemail() {
+    TextField(
+      controller: _emailController,
+      decoration: const InputDecoration(
+        labelText: 'Email',
+        prefixIcon: Icon(Icons.email),
+        border: OutlineInputBorder(),
+      ),
+    );
+  }
+
+  inputdecorationpassword() {
+    TextField(
+      controller: _passwordController,
+      decoration: const InputDecoration(
+        labelText: 'Password',
+        prefixIcon: Icon(Icons.lock),
+        border: OutlineInputBorder(),
+      ),
+      obscureText: true,
     );
   }
 }
