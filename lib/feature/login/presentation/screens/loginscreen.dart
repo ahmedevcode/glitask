@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glitask/core/routes/routes.dart';
+import 'package:glitask/core/utlis/theme/colors/app_color.dart';
 import 'package:glitask/feature/login/controller/login_cubit.dart';
 import 'package:glitask/feature/login/presentation/screens/widgets/custompaint_login.dart';
 
@@ -63,7 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
-                      child: const Text('Login'),
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(color: buttoncolor),
+                      ),
                     );
                   },
                 ),

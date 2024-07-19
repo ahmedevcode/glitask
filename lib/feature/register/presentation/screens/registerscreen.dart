@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:glitask/core/utlis/theme/colors/app_color.dart';
 import 'package:glitask/feature/register/presentation/screens/widgets/custompainter_register.dart';
 
 import '../../controller/cubit/register_cubit.dart';
@@ -33,7 +34,11 @@ class _RegisterFormState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Register')),
+      appBar: AppBar(
+          title: const Text(
+        'Register',
+        style: TextStyle(color: buttoncolor),
+      )),
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -67,10 +72,13 @@ class _RegisterFormState extends State<RegisterScreen> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 50, vertical: 15),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
-                    child: const Text('Register'),
+                    child: const Text(
+                      'Register',
+                      style: TextStyle(color: buttoncolor),
+                    ),
                   ),
                 ],
               ),
