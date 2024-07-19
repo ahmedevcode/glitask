@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:glitask/core/routes/routes.dart';
 import 'package:glitask/feature/login/controller/login_cubit.dart';
 import 'package:glitask/feature/login/presentation/screens/widgets/custompaint_login.dart';
 import '../../../../core/helper/auth_service.dart';
@@ -85,11 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const RegisterScreen()),
-                    );
+                    Navigator.pushNamed(context, Routes.rigesterscreen);
                   },
                   child: const Text('Don\'t have an account? Register'),
                 ),

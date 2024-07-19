@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:glitask/core/helper/auth_service.dart';
 import 'package:glitask/feature/login/controller/login_cubit.dart';
 import 'package:glitask/feature/login/presentation/screens/loginscreen.dart';
+import 'package:glitask/feature/register/controller/cubit/register_cubit.dart';
 import 'package:glitask/feature/register/presentation/screens/registerscreen.dart';
 
 import 'routes.dart';
@@ -18,7 +19,10 @@ class AppRouter {
           ),
         );
       case Routes.rigesterscreen:
-        return MaterialPageRoute(builder: (_) => const RegisterScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider<RegisterCubit>(
+                create: (_) => RegisterCubit(AuthService()),
+                child: const RegisterScreen()));
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
