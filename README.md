@@ -1,10 +1,16 @@
-# glitask
+# GlitaskFlutter🏛️
 
-# Task Management App
+# Task Management App📓:
 
 Task Management App is a mobile application built with Flutter that allows users to manage their tasks efficiently. The app supports adding, editing, deleting tasks, and includes user authentication.
 
-## Table of Contents
+
+🔐 : System design 🔐
+
+
+![Screenshot 2024-07-20 232413](https://github.com/user-attachments/assets/82d15ee6-fb55-454c-8e08-d31ffde4ec25)
+
+## Table of Contents🔡
 
 - [Features](#features)
 - [Installation](#installation)
@@ -16,12 +22,12 @@ Task Management App is a mobile application built with Flutter that allows users
 
 ## Features
 
-- User authentication (Login/Logout).
-- Add, edit, and delete tasks.
-- Mark tasks as completed.
-- View profile information.
-- Beautiful and professional UI/UX design.
-- Responsive design for different screen sizes.
++ User authentication (Login/Logout).
++ Add, edit, and delete tasks.
++ Mark tasks as completed.
++ View profile information.
++ Beautiful and professional UI/UX design.
++ Responsive design for different screen sizes.
 
 ## Installation
 
@@ -70,7 +76,37 @@ Once the app is running, you can:
 
 ## Screenshots
 
-Include some screenshots of your app here to showcase its design and functionality.
+## 🎥 Video:
+
+
+https://github.com/user-attachments/assets/f08ea714-8e03-4b9f-baa9-2c515dbd6dca
+
+
+
+📷 Screenshots:
+<table>
+  <tr>
+    <td>Login View</td>
+    <td>Register View</td>
+    <td>Task Management List View</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/0d9d0cd9-b430-465b-aaf9-9d8d28e725bf" width=1500></td>
+    <td><img src="https://github.com/user-attachments/assets/564f2525-49c2-41d1-8321-6b2adf2d0b51" width=1500></td>
+    <td><img src="https://github.com/user-attachments/assets/ed9604ff-cdd6-4b9c-a28a-4eacd29a859d" width=1500></td>
+  </tr>
+  <tr>
+    <td>Add Task</td>
+    <td>Profile View</td>
+    <td>dialog View</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/704a8281-d155-4073-9455-a72f061de9ba" width=1500></td>
+    <td><img src="https://github.com/user-attachments/assets/adc5a5ca-2ba7-488c-a490-d24e2e35ff65" width=1500></td>
+    <td><img src="https://github.com/user-attachments/assets/0b709b5c-80c0-4371-9ef9-c1f5552b4760" width=1500></td>
+  </tr>
+</table>
+
 
 ## Technologies Used
 
