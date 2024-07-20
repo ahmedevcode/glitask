@@ -58,7 +58,10 @@ class TaskList extends StatelessWidget {
     return BlocBuilder<TaskCubit, TaskState>(
       builder: (context, state) {
         if (state is TaskLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+              child: CircularProgressIndicator(
+            color: Colors.amber,
+          ));
         } else if (state is TaskLoaded) {
           final tasks = state.tasks;
           return ListView.builder(
