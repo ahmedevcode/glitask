@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glitask/feature/taskmanger/controller/task_cubit.dart';
 import 'package:glitask/feature/taskmanger/data/model/task_model.dart';
 import 'package:glitask/feature/taskmanger/data/repository/task_repository.dart';
@@ -112,8 +113,10 @@ class TaskItem extends StatelessWidget {
       child: ListTile(
         title: Text(
           task.title,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
           task.description,

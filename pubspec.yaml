@@ -15,7 +15,11 @@ dependencies:
   firebase_auth: ^5.1.2
   firebase_core: ^3.2.0
   flutter_bloc: ^8.1.6
+<<<<<<< feature/responsive_size
+  flutter_screenutil: ^5.9.3
+=======
   flutter_native_splash: ^2.4.1
+>>>>>>> development
   google_fonts: ^6.2.1
 
 dev_dependencies:
