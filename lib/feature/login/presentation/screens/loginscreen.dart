@@ -43,7 +43,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Login successful!')),
                       );
-                      // Navigate to the TaskManagementScreen here
+
+                      Navigator.pushNamed(context, Routes.taskManagementScreen);
                     }
                   },
                   builder: (context, state) {
