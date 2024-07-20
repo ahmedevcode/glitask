@@ -107,6 +107,8 @@ https://github.com/user-attachments/assets/f08ea714-8e03-4b9f-baa9-2c515dbd6dca
   </tr>
 </table>
 
+## Figma design 🎨:
+https://www.figma.com/design/Ac8TSqrrGMzkFYXOVqZiqF/taskmangment?node-id=0-1&t=mEOLj6FYMGHfiPsY-1
 
 ## Technologies Used
 
