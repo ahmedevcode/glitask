@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glitask/core/utlis/theme/colors/app_color.dart';
 import 'package:glitask/feature/register/presentation/screens/widgets/custompainter_register.dart';
 
@@ -59,9 +60,9 @@ class _RegisterFormState extends State<RegisterScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _inputdecorationemail(),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   _inputdecorationpassword(),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   ElevatedButton(
                     onPressed: () {
                       String email = _emailController.text.trim();
