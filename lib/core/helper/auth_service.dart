@@ -2,13 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 class AuthService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  Future<User?> signInWithEmailAndPassword(
-      String email, String password) async {
+  // Register with email and password
+  Future<User?> registerWithEmailAndPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential result = await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       User? user = result.user;
       return user;
     } catch (e) {
@@ -19,11 +21,13 @@ class AuthService {
     }
   }
 
-  Future<User?> registerWithEmailAndPassword(
-      String email, String password) async {
+  // Sign in with email and password
+  Future<User?> signInWithEmailAndPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential result = await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       User? user = result.user;
       return user;
     } catch (e) {
@@ -34,14 +38,25 @@ class AuthService {
     }
   }
 
+  // Sign out
   Future<void> signOut() async {
     try {
-      return await _auth.signOut();
+      return await _firebaseAuth.signOut();
     } catch (e) {
       if (kDebugMode) {
         print(e.toString());
       }
-      return;
+      return ;
     }
+  }
+
+  // Get current user
+  User? get currentUser {
+    return _firebaseAuth.currentUser;
+  }
+
+  // Get current user's UID
+  String? getCurrentUID() {
+    return _firebaseAuth.currentUser?.uid;
   }
 }

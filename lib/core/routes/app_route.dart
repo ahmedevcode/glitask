@@ -5,6 +5,9 @@ import 'package:glitask/feature/login/controller/login_cubit.dart';
 import 'package:glitask/feature/login/presentation/screens/loginscreen.dart';
 import 'package:glitask/feature/register/controller/cubit/register_cubit.dart';
 import 'package:glitask/feature/register/presentation/screens/registerscreen.dart';
+import 'package:glitask/feature/taskmanger/controller/task_cubit.dart';
+import 'package:glitask/feature/taskmanger/data/repository/task_repository.dart';
+import 'package:glitask/feature/taskmanger/presentation/screens/taskmangment_screen.dart';
 
 import 'routes.dart';
 
@@ -18,6 +21,10 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
+      case Routes.taskManagementScreen:
+        return MaterialPageRoute(
+            builder: (_) => const DefaultTabController(
+                length: 3, child: TaskManagementScreen()));
       case Routes.registerScreen:
         return MaterialPageRoute(
             builder: (_) => BlocProvider<RegisterCubit>(

@@ -18,7 +18,8 @@ class LoginCubit extends Cubit<LoginState> {
       if (user != null) {
         emit(LoginSuccess());
       } else {
-        emit(LoginFailure('Login failed. Please check your credentials.'));
+        emit(
+            LoginFailure('Login failed. Please check your E-mail & Password.'));
       }
     } catch (e) {
       emit(LoginFailure(e.toString()));
