@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glitask/core/routes/routes.dart';
+import 'package:glitask/core/utlis/theme/colors/app_color.dart';
 import 'package:glitask/feature/login/controller/login_cubit.dart';
 import 'package:glitask/feature/login/presentation/screens/widgets/custompaint_login.dart';
 
@@ -29,9 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 inputdecorationemail(),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 inputdecorationpassword(),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) {
                     if (state is LoginFailure) {
@@ -42,7 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Login successful!')),
                       );
-                      // Navigate to the TaskManagementScreen here
+
+                      Navigator.pushNamed(context, Routes.taskManagementScreen);
                     }
                   },
                   builder: (context, state) {
@@ -63,7 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
-                      child: const Text('Login'),
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(color: buttoncolor),
+                      ),
                     );
                   },
                 ),
