@@ -36,7 +36,7 @@ To get started with the Task Management App, follow these steps:
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/your-username/task-management-app.git
+    git clone https://github.com/ahmedevcode/glitask
     cd task-management-app
     ```
 
